@@ -32,141 +32,106 @@ type CaseStudy = {
 
 const CASE_STUDIES: CaseStudy[] = [
     {
-        id: "b2b-commerce",
-        name: "B2B Commerce Platform Modernization",
-        tag: "Enterprise Web",
-        industry: "Manufacturing & Distribution",
-        year: "2024",
-        stack: "Drupal 10 + Symfony APIs + Next.js frontend",
+        id: "monkeyscloud-platform",
+        name: "MonkeysCloud: All-in-one DevOps & Project Platform",
+        tag: "SaaS / DevOps",
+        industry: "Web Agencies & Dev Teams",
+        year: "2025",
+        stack: "Symfony APIs + Next.js app + Python workers + Drupal 10 site + Terraform",
         services: [
-            "Drupal Engineering",
             "Symfony Backends",
             "Next.js Web App",
-            "DevOps & Observability",
-        ],
-        summary:
-            "Modernized a legacy Drupal 7 commerce stack into a fast, maintainable platform that marketing and sales teams can actually rely on.",
-        image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop",
-        client: "North American B2B Manufacturer",
-        duration: "6 months",
-        challenge:
-            "Legacy Drupal 7 site with poor performance, complex product catalog (50k+ SKUs), fragile pricing rules, and a content workflow that made every change stressful.",
-        solution:
-            "Migration to Drupal 10 with a custom distribution, new content model, Symfony-based pricing and inventory APIs, and a Next.js frontend tuned for performance and SEO—plus a safer CI/CD pipeline and observability.",
-        metrics: [
-            { label: "Page Load Time", value: "48% faster" },
-            { label: "Qualified Leads", value: "+32%" },
-            { label: "Bounce Rate", value: "-41%" },
-            { label: "Admin Time Saved", value: "60%" },
-        ],
-        impactNotes: [
-            "Marketing can spin up new campaigns without waiting on engineering.",
-            "Sales reps have more reliable product data during calls.",
-            "Upgrade path for future Drupal and Node/Next.js versions is now clear.",
-        ],
-    },
-    {
-        id: "fintech-mobile-suite",
-        name: "Fintech Mobile Suite & Transaction Platform",
-        tag: "Fintech Apps",
-        industry: "Digital Payments",
-        year: "2023",
-        stack: "Laravel backend + React Native apps + Go workers",
-        services: [
-            "Laravel Backends",
-            "Mobile Apps",
-            "Go Services",
-            "DevOps & Cloud",
-        ],
-        summary:
-            "Shipped a mobile-first payment experience backed by a robust Laravel/Go platform with real-time flows and strong observability.",
-        image:
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&h=600&fit=crop",
-        client: "High-growth Fintech Startup",
-        duration: "8 months",
-        challenge:
-            "The client needed to move from prototype to production: real-time payments, regulatory constraints, fraud checks, and a mobile experience that users could trust.",
-        solution:
-            "Designed and implemented a Laravel API backbone, React Native apps for iOS and Android, and Go workers handling transaction processing, notifications, and fraud signals. Wired everything into CI/CD with detailed metrics and alerting.",
-        metrics: [
-            { label: "Monthly Active Users", value: "50k+" },
-            { label: "Transaction Latency", value: "< 2 seconds" },
-            { label: "Platform Uptime", value: "99.97%" },
-            { label: "App Store Rating", value: "4.8 / 5.0" },
-        ],
-        impactNotes: [
-            "Support tickets about ‘stuck’ transactions dropped significantly.",
-            "Product team can now experiment safely with new flows.",
-            "Regulators and partners gained confidence thanks to traceability.",
-        ],
-    },
-    {
-        id: "saas-analytics-toolkit",
-        name: "SaaS Analytics Toolkit & Real-time Dashboard",
-        tag: "SaaS / Data",
-        industry: "B2B Analytics",
-        year: "2022",
-        stack: "Python ETL + Go microservices + Next.js dashboard",
-        services: [
-            "Python & Go Services",
-            "Next.js Web App",
-            "DevOps & Observability",
-        ],
-        summary:
-            "Turned a slow, batch-based reporting system into a near real-time analytics experience customers actually enjoy using.",
-        image:
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop",
-        client: "B2B SaaS Analytics Company",
-        duration: "5 months",
-        challenge:
-            "Reports took hours to generate, outages were hard to diagnose, and the UI made it difficult for customers to understand what was happening with their data.",
-        solution:
-            "Introduced event-driven pipelines with Python workers and Go services, a streaming ingestion path, and a Next.js dashboard with fast, interactive charts. Added strong instrumentation, alerts, and SLOs.",
-        metrics: [
-            { label: "Report Generation", value: "Hours → Seconds" },
-            { label: "Data Processing Throughput", value: "10x increase" },
-            { label: "Customer Satisfaction", value: "+67%" },
-            { label: "System Capacity", value: "5x more tenants" },
-        ],
-        impactNotes: [
-            "Sales started using the dashboard live during demos instead of screenshots.",
-            "Support teams gained visibility into delays and backlogs in real time.",
-            "Engineering can roll out new ETL/worker versions with lower risk.",
-        ],
-    },
-    {
-        id: "internal-ops-portal",
-        name: "Internal Ops Portal for a Distributed Team",
-        tag: "Internal Tools",
-        industry: "Operations & Logistics",
-        year: "2024",
-        stack: "Drupal 10 + Symfony API + React/Next.js portal",
-        services: [
+            "Python Services",
             "Drupal Engineering",
-            "Symfony Backends",
-            "React / Next.js Apps",
+            "DevOps & Terraform",
         ],
         summary:
-            "Unified fragmented spreadsheets and email-based workflows into a single internal portal with clear ownership and reporting.",
-        image:
-            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=600&fit=crop",
-        client: "US-based Operations Team",
-        duration: "4 months",
+            "Designed and built MonkeysCloud, a multi-tenant platform that unifies project management, Git workflows, and hosting into a single flow for web agencies and dev teams.",
+        image: "/images/monkeyscloud.jpg",
+        client: "MonkeysCloud (internal product)",
+        duration: "9 months to v1 • Ongoing evolution",
         challenge:
-            "The team ran critical workflows across spreadsheets, emails, and ad-hoc scripts. Nobody had a reliable view of status, and onboarding new teammates was painful.",
+            "Agencies were juggling separate tools for tasks, Git, deployments, and server management. Onboarding a new project meant repeating the same manual steps across snowflake servers, and there was no single place to see the health of projects, repos, and environments.",
         solution:
-            "Modeled core entities in Drupal 10, exposed them via Symfony APIs, and built a tailored Next.js portal with role-based access, dashboards, and audit trails. We added logging and metrics around the most important flows.",
+            "We built a Symfony-based API as the core brain, a Next.js app as the main control panel, and Python workers for background jobs like backups, health checks, and analytics. A Drupal 10 site powers the public marketing layer. Terraform codifies the entire infrastructure so projects, environments, and networks can be provisioned reproducibly across cloud providers.",
         metrics: [
-            { label: "Onboarding Time", value: "↓ ~50%" },
-            { label: "Manual Status Checks", value: "↓ ~70%" },
-            { label: "Process SLA Breaches", value: "↓ ~40%" },
-            { label: "User Adoption", value: "90%+ ops team" },
+            { label: "Project Setup Time", value: "Hours → Minutes" },
+            { label: "Manual Server Work", value: "↓ ~70%" },
+            { label: "Deployment Consistency", value: "Standardized via Terraform" },
+            { label: "Managed Projects Capacity", value: "↑ ~30% per team" },
         ],
         impactNotes: [
-            "Ops leaders finally had a live view of bottlenecks.",
-            "Engineers could evolve workflows without spreadsheet archaeology.",
-            "New automations can now be layered on top of a stable foundation.",
+            "Agencies can spin up new customer projects with a repeatable template instead of ad-hoc servers.",
+            "Developers see tasks, branches, pipelines, and environments in one place instead of five tools.",
+            "Platform-level automation (backups, monitoring, deploy hooks) reduces the cognitive load on each individual project.",
+        ],
+    },
+    {
+        id: "monkeysmail-platform",
+        name: "MonkeysMail: Email Infrastructure for Apps & Platforms",
+        tag: "SaaS / Infrastructure",
+        industry: "Email & Communications",
+        year: "2025",
+        stack: "PHP mail APIs + mail server cluster + Next.js dashboard + Terraform",
+        services: [
+            "PHP Backends",
+            "Next.js Web App",
+            "Mail Server Architecture",
+            "DevOps & Terraform",
+        ],
+        summary:
+            "Built MonkeysMail, an email delivery platform that gives apps SMTP, HTTP APIs, tracking, and domain management without teams having to run their own mail stack.",
+        image: "/images/monkeysmail.jpg",
+        client: "MonkeysMail (internal product)",
+        duration: "12 months to stable v1 • Ongoing evolution",
+        challenge:
+            "Product teams needed reliable SMTP and API-based email delivery, but rolling their own mail stack meant wrestling with Postfix configs, DNS, deliverability, and observability. There was no single place to manage domains, keys, webhooks, and logs.",
+        solution:
+            "We designed a PHP-based core API for sending, routing, and tracking messages, fronted by a Next.js dashboard for managing domains, DNS records, credentials, and webhooks. A hardened mail server cluster (Postfix, DKIM, DMARC, queue management) runs on infrastructure provisioned end-to-end with Terraform, so new regions and environments can be spun up reproducibly.",
+        metrics: [
+            { label: "Time to onboard domain", value: "Days → < 1 hour" },
+            { label: "Deliverability to inbox", value: "↑ vs. legacy setup" },
+            { label: "Manual server tweaks", value: "↓ ~80%" },
+            { label: "Incidents per month", value: "Sharp reduction" },
+        ],
+        impactNotes: [
+            "Developers integrate via SMTP or HTTP APIs instead of hand-rolling mail flows per app.",
+            "Ops teams get a single dashboard for queues, logs, bounces, and webhooks.",
+            "Terraformized infrastructure makes new clusters and regions predictable instead of one-off snowflakes.",
+        ],
+    },
+    {
+        id: "colibriv-platform",
+        name: "ColibriV: Hydrogen-Combustion Aircraft & Public Platform",
+        tag: "Aerospace / Deep Tech Web",
+        industry: "Aviation & Clean Energy",
+        year: "2025",
+        stack: "Next.js app + Drupal 11 content hub + API integrations",
+        services: [
+            "Next.js Engineering",
+            "Drupal 11 Development",
+            "Design & UX",
+            "Cloud Deployment",
+        ],
+        summary:
+            "We built the ColibriV digital platform to communicate the vision, technology roadmap, and traction of a hydrogen-combustion regional aircraft program — with a modern investor-ready web presence.",
+        image: "/images/colibriv.jpg",
+        client: "ColibriV (internal product)",
+        duration: "3 months initial build • Ongoing brand evolution",
+        challenge:
+            "ColibriV needed to showcase a sophisticated aerospace program — turbine R&D, certification roadmap, sustainability metrics — while staying fast, credible, and easy to update by a lean team. The brand and message had to feel world-class for investors and institutions.",
+        solution:
+            "We architected a decoupled stack using Drupal 11 as the central knowledge and media system, while Next.js powers a blazing-fast frontend that supports rich visuals, roadmaps, investor materials, and article publishing. A crafting-first design approach delivers clear storytelling and high investor confidence.",
+        metrics: [
+            { label: "SEO Technical Score", value: "98/100" },
+            { label: "Page Performance", value: "↑ ~45%" },
+            { label: "Publishing Velocity", value: "Weekly → Same-day" },
+            { label: "Investor Conversion", value: "Steady month-over-month" },
+        ],
+        impactNotes: [
+            "Aviation partners and investors get a polished, credible first touchpoint.",
+            "Engineering and R&D updates publish faster without developer bottlenecks.",
+            "Brand signals (UI + messaging + performance) match the ambition of the aircraft program.",
         ],
     },
 ];

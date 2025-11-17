@@ -128,65 +128,60 @@ type ExtendedCaseStudy = CaseStudy & {
 
 const extendedCaseStudies: ExtendedCaseStudy[] = [
     {
-        name: "B2B Commerce Platform",
-        stack: "Drupal + Symfony APIs + Next.js frontend",
-        result:
-            "Reduced average page load times by 48% and increased qualified leads by 32%.",
-        tag: "Enterprise Web",
-        image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-        client: "Manufacturing & Distribution Company",
-        duration: "6 months",
+        name: "MonkeysCloud Platform",
+        stack: "Symfony APIs + Next.js app + Python workers + Drupal 10 site + Terraform",
+        result: "Cut project setup time from hours to minutes and standardized hosting across clients.",
+        tag: "SaaS / DevOps",
+        image: "/images/monkeyscloud.jpg",
+        client: "Web agencies & dev teams (MonkeysCloud)",
+        duration: "9 months to v1 • ongoing evolution",
         challenge:
-            "Legacy Drupal 7 site with poor performance, complex product catalog with 50k+ SKUs, and difficult content management workflow. The client was losing leads due to slow page loads and couldn't scale their digital operations.",
+            "Agencies were juggling separate tools for tasks, Git, deployments, and server management. Spinning up a new project meant repeating the same manual setup on snowflake servers, with no single place to see project health.",
         solution:
-            "Migrated to headless Drupal 10 with custom distribution, built high-performance Next.js frontend with SSR, implemented Symfony APIs for complex pricing and inventory logic, optimized database queries and caching strategy, and integrated with existing ERP system.",
+            "We built MonkeysCloud as a multi-tenant control plane: Symfony APIs as the core brain, a Next.js app as the main dashboard, Python workers for backups and health checks, a Drupal 10 site for the marketing layer, and Terraform to codify all infrastructure for repeatable, safe provisioning.",
         metrics: [
-            { label: "Page Load Time", value: "48% faster" },
-            { label: "Lead Generation", value: "+32%" },
-            { label: "Bounce Rate", value: "-41%" },
-            { label: "Admin Time Saved", value: "60%" },
+            { label: "Project Setup Time", value: "Hours → Minutes" },
+            { label: "Manual Server Work", value: "↓ ~70%" },
+            { label: "Deployment Consistency", value: "Standardized via Terraform" },
+            { label: "Managed Projects Capacity", value: "↑ ~30% per team" },
         ],
     },
     {
-        name: "Fintech Mobile Suite",
-        stack: "Laravel backend + React Native + Go workers",
-        result:
-            "Enabled real-time transaction flows for 50k+ monthly active users.",
-        tag: "Fintech Apps",
-        image:
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=500&fit=crop",
-        client: "Digital Payment Startup",
-        duration: "8 months",
+        name: "MonkeysMail Email Infrastructure",
+        stack: "PHP mail APIs + hardened mail servers + Next.js dashboard + Terraform",
+        result: "Gave apps reliable SMTP/API email without each team running its own mail stack.",
+        tag: "SaaS / Infrastructure",
+        image: "/images/monkeysmail.jpg",
+        client: "Product teams using MonkeysMail",
+        duration: "12 months to stable v1 • ongoing",
         challenge:
-            "Building a secure, real-time payment processing platform from scratch. Needed to handle high transaction volumes, ensure PCI compliance, implement fraud detection, and provide instant notifications across web and mobile platforms.",
+            "Teams needed reliable transactional email (SMTP and HTTP APIs) but didn’t want to own Postfix configs, DNS, deliverability tuning, and queue monitoring. There was no unified place to manage domains, credentials, and webhooks.",
         solution:
-            "Built Laravel backend with robust API authentication, developed cross-platform React Native apps for iOS and Android, implemented Go microservices for transaction processing and fraud detection, integrated with multiple payment gateways, and established comprehensive monitoring and alerting.",
+            "We designed a PHP-based API layer for sending, routing, and tracking messages, with a Next.js dashboard for domains, DNS, API keys, and webhooks. A hardened mail server cluster powers delivery, while Terraform provisions and scales the infrastructure reproducibly across environments and regions.",
         metrics: [
-            { label: "Monthly Active Users", value: "50k+" },
-            { label: "Transaction Speed", value: "<2 seconds" },
-            { label: "Uptime", value: "99.97%" },
-            { label: "App Store Rating", value: "4.8/5.0" },
+            { label: "Domain Onboarding", value: "Days → < 1 hour" },
+            { label: "Manual Server Tweaks", value: "↓ ~80%" },
+            { label: "Deliverability", value: "Improved vs. prior ad-hoc setup" },
+            { label: "Incidents / Month", value: "Significant reduction" },
         ],
     },
     {
-        name: "SaaS Analytics Toolkit",
-        stack: "Go microservices + Python data workers + Next.js dashboard",
-        result: "Cut reporting time from hours to seconds with streaming analytics.",
-        tag: "SaaS / Data",
-        image:
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-        client: "B2B SaaS Analytics Company",
-        duration: "5 months",
+        name: "ColibriV Digital Platform",
+        stack: "Next.js site + Drupal 11 content hub",
+        result: "Created an investor-ready digital presence for a hydrogen-combustion aircraft program.",
+        tag: "Aerospace / Deep Tech",
+        image: "/images/colibriv.jpg",
+        client: "ColibriV (internal product)",
+        duration: "3 months initial build • ongoing brand work",
         challenge:
-            "Existing analytics platform took hours to generate reports, couldn't handle real-time data streaming, had scaling limitations, and provided poor user experience.",
+            "ColibriV needed a serious public face for a hydrogen-combustion aircraft program—technology roadmap, certification path, and climate impact—while keeping updates easy for a small team and credible for investors and institutions.",
         solution:
-            "Architected event-driven Go microservices for real-time pipelines, added Python workers for ETL and enrichment, built a streaming analytics layer, and created an interactive Next.js dashboard with efficient aggregation and caching.",
+            "We used Drupal 11 as the structured content hub for technology pages, roadmaps, and updates, and built a fast, polished Next.js frontend optimized for SEO and storytelling. The site is tuned for investor traffic, with clear flows to learn about the aircraft, the engine program, and funding needs.",
         metrics: [
-            { label: "Report Generation", value: "Hours → Seconds" },
-            { label: "Data Processing", value: "10x faster" },
-            { label: "Customer Satisfaction", value: "+67%" },
-            { label: "System Capacity", value: "5x increase" },
+            { label: "SEO Technical Score", value: "≈ 98 / 100" },
+            { label: "Page Performance", value: "↑ ~45% vs. initial prototype" },
+            { label: "Content Publishing", value: "Weekly → Same-day updates" },
+            { label: "Investor Readiness", value: "Stronger first impression & clarity" },
         ],
     },
 ];
