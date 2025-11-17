@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
     // Payload exactly in MonkeysMail format
     const payload = {
         from: { email: "no-reply@colibricode.com", name: "ColibriCode Website" },
-        to: ["jorge@colibricode.com"],
+        to: ["jorge@monkeys.cloud"],
         subject,
         text,
         html,
