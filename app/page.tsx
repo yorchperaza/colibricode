@@ -63,41 +63,41 @@ type StackLink = {
 };
 
 const services: Service[] = [
-    {
-        title: "Drupal Engineering",
-        desc:
-            "Custom modules, deep integrations, performance tuning, and modern headless builds for complex content platforms.",
-    },
-    {
-        title: "Symfony & Laravel Backends",
-        desc:
-            "Business backends, APIs, multi-tenant SaaS, and admin dashboards tailored to your workflows.",
-    },
-    {
-        title: "Python APIs & Automation",
-        desc:
-            "Fast Python APIs, background jobs, ETL pipelines, and glue code that keeps your systems talking to each other.",
-    },
-    {
-        title: "Web Applications (React / Next.js)",
-        desc:
-            "Modern, responsive applications with clean UX, server-side rendering, and performance baked in.",
-    },
-    {
-        title: "Mobile Apps",
-        desc:
-            "Cross-platform apps with unified backends, analytics, and continuous delivery pipelines.",
-    },
-    {
-        title: "Go Microservices & Workers",
-        desc:
-            "High-throughput services, event-driven workers, and background processing in Go.",
-    },
-    {
-        title: "DevOps, CI/CD & Observability",
-        desc:
-            "Pipelines, environments, monitoring, alerting, and production hardening for your stack.",
-    },
+  {
+    title: "Drupal Engineering",
+    desc:
+      "Complex Drupal platforms built to last: migrations, custom modules, content architecture, performance tuning, and modern headless builds.",
+  },
+  {
+    title: "Symfony & Laravel Backends",
+    desc:
+      "Production backends from scratch: APIs, workflows, multi-tenant SaaS, admin dashboards, RBAC, and integrations tailored to real operations.",
+  },
+  {
+    title: "Python APIs & Automation",
+    desc:
+      "Python services that keep systems moving: APIs, workers, ETL pipelines, integrations, and automation designed for reliability and traceability.",
+  },
+  {
+    title: "Web Applications (React / Next.js)",
+    desc:
+      "Modern web products built for speed and clarity: SSR/SEO, dashboards, design systems, performance, and maintainable front-end architecture.",
+  },
+  {
+    title: "Mobile Apps",
+    desc:
+      "Cross-platform apps connected to real backends: authentication, sync strategies, analytics, notifications, and release pipelines.",
+  },
+  {
+    title: "Go Microservices & Workers",
+    desc:
+      "High-throughput services and workers: event-driven processing, background pipelines, profiling-led performance, and clean service boundaries.",
+  },
+  {
+    title: "DevOps, CI/CD & Observability",
+    desc:
+      "Production readiness end-to-end: CI/CD, environments, monitoring, logging, alerting, hardening, and operational playbooks.",
+  },
 ];
 
 const serviceCTAMap: Record<string, string> = {
@@ -111,10 +111,10 @@ const serviceCTAMap: Record<string, string> = {
 };
 
 const anchorMessages: string[] = [
-    "From first commit to real users.",
-    "You own the code, we own the execution.",
-    "Senior engineers, not a factory of juniors.",
-    "We measure success in shipped features.",
+  "From discovery to production: architecture, build, launch, and long-term evolution.",
+  "You own the code and IP. We own the engineering execution and delivery quality.",
+  "Senior engineers only: small teams, direct collaboration, no junior handoffs.",
+  "Success is measurable: shipped features, stable releases, and systems that scale.",
 ];
 
 type ExtendedCaseStudy = CaseStudy & {
@@ -253,130 +253,135 @@ const capabilities: Capability[] = [
 ];
 
 const whyPoints: WhyPoint[] = [
-    {
-        title: "Workshop, not an agency machine.",
-        desc:
-            "We work in small, senior teams that think with you, not just take orders from a ticket system.",
-    },
-    {
-        title: "Focused tech stack.",
-        desc:
-            "Drupal, Symfony, Laravel, modern JS, Python, Go, and DevOps. We say no to stacks we can't master.",
-    },
-    {
-        title: "Production-first thinking.",
-        desc:
-            "We design for real-world users, traffic, and failures—not just happy-path demos.",
-    },
+  {
+    title: "A workshop model built for ownership.",
+    desc:
+      "We operate as a small, senior team that shares responsibility for outcomes—architecture, delivery, and long-term maintainability—not just tickets.",
+  },
+  {
+    title: "Depth over breadth in the stack.",
+    desc:
+      "We stay focused: Drupal, Symfony, Laravel, modern React/Next.js, Python, Go, and DevOps. If it’s not a stack we can lead confidently, we say no.",
+  },
+  {
+    title: "Production-first engineering.",
+    desc:
+      "We design for real traffic, real users, and real failures. Performance, security, observability, and operability are part of the build—not an afterthought.",
+  },
 ];
 
 const engagementModels: EngagementModel[] = [
-    {
-        name: "Project-based delivery",
-        desc:
-            "Defined scope, milestones, and outcomes for a clear project phase or product launch.",
-        fit: "Best for greenfield builds, redesigns, or time-boxed modernization.",
-    },
-    {
-        name: "Embedded squad",
-        desc:
-            "A ColibriCode team working alongside your engineers, sharing tools and rituals.",
-        fit: "Best for ongoing roadmaps where you need extra senior capacity.",
-    },
-    {
-        name: "Rescue & stabilization",
-        desc:
-            "We take over a struggling codebase, stabilize it, and put it back on a sane track.",
-        fit: "Best for legacy projects, missed deadlines, and noisy production incidents.",
-    },
+  {
+    name: "Project-based delivery",
+    desc:
+      "A defined phase with clear scope, milestones, and deliverables—ideal for building from scratch or shipping a major release with senior ownership.",
+    fit: "Best for greenfield builds, redesigns, platform launches, and time-boxed modernization.",
+  },
+  {
+    name: "Embedded squad",
+    desc:
+      "A senior ColibriCode team working alongside your engineers, sharing tools and rituals, and owning complete features end-to-end.",
+    fit: "Best for ongoing roadmaps where you need more senior capacity without lowering standards.",
+  },
+  {
+    name: "Rescue & stabilization",
+    desc:
+      "We inherit a struggling codebase, stabilize production, reduce operational noise, and put delivery back on a predictable track.",
+    fit: "Best for legacy platforms, missed deadlines, reliability issues, and high-impact incidents.",
+  },
 ];
 
 const faqs: FAQ[] = [
-    {
-        question: "Where is ColibriCode based?",
-        answer:
-            "ColibriCode is based in Denver, Colorado, USA. We work in a remote-friendly way with clients across North America and Europe, keeping healthy overlap with your core hours.",
-    },
-    {
-        question: "Which technologies do you specialize in?",
-        answer:
-            "We focus on Drupal, Symfony, Laravel, modern React / Next.js frontends, mobile apps, Python APIs and automation, Go microservices, and the DevOps needed to run them in production.",
-    },
-    {
-        question: "How do we start working together?",
-        answer:
-            "Send a short brief: your context, the current stack (if any), timeline, and what success looks like. We'll respond with clarifying questions and a suggested engagement model.",
-    },
-    {
-        question: "Can you work with our internal team?",
-        answer:
-            "Yes. Many of our engagements are embedded: we pair with your engineers, adopt your rituals (standups, sprint reviews), and keep everything documented and transparent.",
-    },
-    {
-        question: "What size projects do you take on?",
-        answer:
-            "We focus on meaningful work: from focused 4–6 week builds to multi-quarter roadmaps. If we're not the right fit, we'll tell you upfront.",
-    },
+  {
+    question: "Where is ColibriCode based?",
+    answer:
+      "ColibriCode is based in Denver, Colorado, USA. We work remote-first with clients across North America and Europe, keeping reliable overlap with your core hours and strong written communication.",
+  },
+  {
+    question: "Do you build projects from scratch?",
+    answer:
+      "Yes. We regularly take products from idea to production: discovery, architecture, implementation, deployments, and ongoing evolution. If you already have a system, we can also modernize, stabilize, or extend it.",
+  },
+  {
+    question: "Which technologies do you specialize in?",
+    answer:
+      "We focus on Drupal, Symfony, Laravel, React/Next.js, mobile apps, Python APIs and automation, Go services, and the DevOps needed to run them reliably in production.",
+  },
+  {
+    question: "How do we start working together?",
+    answer:
+      "Send a short brief with context, current stack (if any), timeline, and what success looks like. We’ll reply with clarifying questions and recommend the best engagement model and first milestone.",
+  },
+  {
+    question: "Can you work with our internal team?",
+    answer:
+      "Yes. We often embed with internal teams. We can adopt your rituals (standups, sprint reviews, release process), contribute directly to your codebase, and keep decisions documented and transparent.",
+  },
+  {
+    question: "What size projects do you take on?",
+    answer:
+      "We focus on meaningful product work: typically from a focused 4–6 week milestone to multi-quarter roadmaps. If we’re not the right fit, we’ll tell you early and suggest a better path.",
+  },
 ];
 
 const clientProfiles: ClientProfile[] = [
-    {
-        title: "Product & Marketing Teams",
-        headline: "You own a digital product that needs to move faster.",
-        stage: "Scale-ups • Mid-market • Enterprise units",
-        bullets: [
-            "You have a backlog of real user-facing work, not just experiments.",
-            "You need a senior team that can own full features end-to-end.",
-            "You care about long-term maintainability, not just the next launch.",
-        ],
-    },
-    {
-        title: "Engineering Leaders",
-        headline: "You have a roadmap, but not enough senior hands.",
-        stage: "Heads of Eng • CTOs • Tech Leads",
-        bullets: [
-            "You want extra capacity without lowering the quality bar.",
-            "You need people who can read existing code and improve it.",
-            "You want partners who bring ideas, not just tickets closed.",
-        ],
-    },
-    {
-        title: "Founders & Operators",
-        headline: "You need to ship something real, not just a prototype.",
-        stage: "Seed to Series B • New business lines",
-        bullets: [
-            "You have a clear problem and real customers in sight.",
-            "You want predictable delivery and transparent communication.",
-            "You prefer owning your code and infrastructure from day one.",
-        ],
-    },
+  {
+    title: "Product & Marketing Teams",
+    headline: "You own a product that needs to ship faster without breaking quality.",
+    stage: "Scale-ups • Mid-market • Enterprise units",
+    bullets: [
+      "You have real user-facing work that must land reliably.",
+      "You want a senior team that can own features end-to-end.",
+      "You care about performance, SEO, and long-term maintainability.",
+    ],
+  },
+  {
+    title: "Engineering Leaders",
+    headline: "You have a roadmap, but need more senior execution capacity.",
+    stage: "Heads of Eng • CTOs • Tech Leads",
+    bullets: [
+      "You want extra capacity without lowering the quality bar.",
+      "You need engineers who can read existing systems and improve them safely.",
+      "You value partners who challenge assumptions and reduce risk early.",
+    ],
+  },
+  {
+    title: "Founders & Operators",
+    headline: "You need a real product in production, not just a prototype.",
+    stage: "Seed to Series B • New business lines",
+    bullets: [
+      "You want to build from scratch with senior technical leadership.",
+      "You prefer clear milestones, transparent delivery, and predictable progress.",
+      "You want to own your code, infrastructure, and IP from day one.",
+    ],
+  },
 ];
 
 const processSteps: ProcessStep[] = [
-    {
-        title: "01 • Discovery & audit",
-        label: "Understand the reality, not just the pitch deck.",
-        desc:
-            "We review your stack, pain points, constraints, and goals. When there’s existing code, we start with a small technical audit so we know what we’re walking into.",
-    },
-    {
-        title: "02 • Shaping the work",
-        label: "Translate goals into concrete, shippable slices.",
-        desc:
-            "We define a thin slice of value to ship first, map dependencies, and agree on scope, success metrics, and communication rhythm.",
-    },
-    {
-        title: "03 • Build & iterate",
-        label: "Tight feedback loops, visible progress.",
-        desc:
-            "We ship in small increments—demo-able chunks across Drupal, Python, Go, or frontend—so you always know what’s done, what’s in progress, and what’s next.",
-    },
-    {
-        title: "04 • Stabilize & handover",
-        label: "Production, docs, and a clean exit path.",
-        desc:
-            "We harden for production, add monitoring, document the important pieces, and make sure your internal team can run with the stack after we’re gone.",
-    },
+  {
+    title: "01 • Discovery & audit",
+    label: "Get clarity on goals, constraints, and risk.",
+    desc:
+      "We align on outcomes, review constraints, and map the system. If there’s existing code, we run a targeted audit to identify risk, performance bottlenecks, and the fastest path to a safe first milestone.",
+  },
+  {
+    title: "02 • Shaping the work",
+    label: "Define a first milestone that ships real value.",
+    desc:
+      "We translate goals into a shippable slice, define scope and success metrics, and agree on delivery rhythm. You leave with a plan that makes trade-offs explicit and keeps delivery predictable.",
+  },
+  {
+    title: "03 • Build & iterate",
+    label: "Ship in small increments with visible progress.",
+    desc:
+      "We deliver demo-able increments across backend, frontend, services, and infrastructure. You always know what’s done, what’s next, and what decisions were made and why.",
+  },
+  {
+    title: "04 • Stabilize & handover",
+    label: "Operational readiness and a clean exit path.",
+    desc:
+      "We harden for production, add monitoring and alerts, document the critical paths, and ensure your team can run and extend the system confidently after the milestone is complete.",
+  },
 ];
 
 const stackNavigator: StackLink[] = [
@@ -411,17 +416,17 @@ export default function HomePage() {
 
                         <h1 className="text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl">
                             We design, build, and maintain{" "}
-                            <span className="relative inline-block">
-                <span className="relative z-10">production-ready</span>
-                <span className="absolute bottom-2 left-0 h-4 w-full bg-gradient-to-r from-red-600/20 to-red-600/40" />
-              </span>{" "}
+                            <span className="bg-gradient-to-r from-red-600/20 to-red-600/40 bg-[length:100%_0.4em] bg-no-repeat bg-bottom text-neutral-900">
+                                production-ready
+                            </span>{" "}
                             web and mobile products.
                         </h1>
 
                         <p className={`max-w-2xl text-lg leading-relaxed ${brand.gray}`}>
-                            ColibriCode is a hands-on engineering workshop based in Denver, Colorado. We focus on
-                            Drupal, Symfony, Laravel, modern web apps, mobile apps, Python services, and Go microservices.
-                            We work with teams that care about long-term quality, not just getting a prototype out the door.
+                            ColibriCode is a hands-on engineering workshop based in Denver, Colorado. We build complete web and mobile
+                            products from scratch—and we improve existing platforms when the stakes are high. Our core stack includes
+                            Drupal, Symfony, Laravel, React/Next.js, mobile, Python services, Go microservices, and DevOps. The goal is
+                            production-ready systems your team can own and evolve.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -443,7 +448,7 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    <div className="mt-12 lg:mt-0 lg:flex-shrink-0">
+                    <div className="mt-12 lg:mt-0 lg:w-[28rem] lg:flex-shrink-0">
                         <div className="relative">
                             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-red-600/10 to-red-600/5 blur-2xl" />
                             <div className="relative space-y-5 rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm">
@@ -503,11 +508,12 @@ export default function HomePage() {
                     <div className="mb-16 text-center">
                         <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>SERVICES</p>
                         <h2 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">
-                            A focused set of services around serious web and app products.
+                            Senior-led engineering for production web and app products.
                         </h2>
                         <p className={`mx-auto mt-6 max-w-2xl text-lg ${brand.gray}`}>
-                            We go deep on a limited toolbox, combining battle-tested frameworks with sensible architecture,
-                            Python and Go services, and the DevOps practices to keep everything healthy in production.
+                            We build from scratch and modernize existing systems using a focused stack. Expect strong architecture,
+                            clear milestones, and production-first delivery: reliable backends, fast frontends, services that scale,
+                            and DevOps practices that keep everything healthy after launch.
                         </p>
                     </div>
 
@@ -824,8 +830,9 @@ export default function HomePage() {
                         <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>CASE STUDIES</p>
                         <h2 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">Selected work and measurable outcomes.</h2>
                         <p className={`mx-auto mt-6 max-w-2xl text-lg ${brand.gray}`}>
-                            We focus on outcomes: faster sites, more reliable flows, simpler operations — and data pipelines that Python
-                            and Go services can actually keep up with.
+                            We focus on outcomes: fewer manual steps, faster releases, stable operations, and systems that teams can
+                            own long-term. The details vary—Drupal platforms, SaaS backends, infrastructure, or data services—but the
+                            goal is always production readiness and measurable improvement.
                         </p>
                     </div>
 
@@ -934,15 +941,16 @@ export default function HomePage() {
                                 Aligned with US timezones, comfortable with global teams.
                             </h2>
                             <p className="mt-6 text-lg text-neutral-300">
-                                We’re based in Denver, Colorado, working mostly in US hours with easy overlap to both coasts and parts of
-                                Europe. Standups, sprint reviews, async updates—whatever keeps your team informed and unblocked.
+                                We’re based in Denver, Colorado and work remote-first, primarily in US hours with reliable overlap for both
+                                coasts and parts of Europe. You can expect direct communication, documented decisions, and delivery that
+                                stays predictable as scope and systems evolve.
                             </p>
                         </div>
                         <div className="space-y-6 rounded-3xl border border-neutral-800 bg-neutral-950 p-8">
                             {[
-                                "Clear written communication and up-front planning.",
-                                "Engineering decisions explained in plain language.",
-                                "Documentation that helps your team own the codebase later.",
+                                "Clear written communication with a bias toward visible progress.",
+                                "Architecture and engineering decisions explained in plain language.",
+                                "Documentation that helps your team operate and extend the system confidently.",
                             ].map((item) => (
                                 <div key={item} className="flex gap-4">
                                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700">
@@ -1016,11 +1024,11 @@ export default function HomePage() {
                             <div>
                                 <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>START A PROJECT</p>
                                 <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                                    Have a Drupal, PHP, Python, Go, or app project in mind?
+                                    Ready to build from scratch or modernize an existing platform?
                                 </h2>
                                 <p className={`mt-6 text-lg leading-relaxed ${brand.gray}`}>
-                                    Email us a short brief with context, current stack, timeline, and what “success” looks like. We’ll reply
-                                    with concrete next steps—no sales scripts, just an honest view of what we’d do.
+                                    Send a short brief with your context, current stack (if any), timeline, and what success looks like.
+                                    We’ll reply with concrete next steps and a recommended first milestone—no sales scripts, just a clear plan.
                                 </p>
                                 <div className="mt-6 flex flex-wrap gap-3">
                                     <a

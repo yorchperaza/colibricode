@@ -1,6 +1,48 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services | ColibriCode - Build Software Products From Scratch",
+    description:
+        "ColibriCode is a Denver-based product engineering workshop. We build scalable web and mobile applications from scratch with senior engineers. Specialists in Symfony, Laravel, React, Next.js, Python, and Go.",
+    keywords: [
+        "product development",
+        "software engineering",
+        "custom software",
+        "web application development",
+        "mobile app development",
+        "senior engineers",
+        "Denver software company",
+        "MVP development",
+        "SaaS development",
+        "Next.js",
+        "React",
+        "Symfony",
+        "Laravel",
+        "Python",
+        "Go",
+        "technical consultation",
+        "product discovery",
+    ],
+    openGraph: {
+        title: "Services | ColibriCode - Build Software Products From Scratch",
+        description:
+            "We design, build, launch, and maintain production-ready web and mobile applications from scratch. Partner with a senior technical team.",
+        url: "https://colibricode.com/services",
+        siteName: "ColibriCode",
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Services | ColibriCode - Build Software Products From Scratch",
+        description:
+            "We design, build, launch, and maintain production-ready web and mobile applications from scratch. Partner with a senior technical team.",
+    },
+    alternates: {
+        canonical: "https://colibricode.com/services",
+    },
+};
 
 const brand = {
     red: "text-red-600",
@@ -19,266 +61,203 @@ type ServiceArea = {
     tech: string[];
 };
 
-type Deliverable = {
+type TypicalProject = {
     title: string;
-    desc: string;
-};
-
-type Slice = {
-    title: string;
-    desc: string;
+    desc?: string;
 };
 
 type Fit = {
     title: string;
-    bullets: string[];
+    desc: string;
 };
 
-type Industry = {
-    name: string;
-    examples: string[];
-};
-
-type CollabPillar = {
+type WorkPrinciple = {
     title: string;
     desc: string;
 };
 
 const serviceAreas: ServiceArea[] = [
     {
-        id: "drupal",
-        title: "Drupal Engineering",
-        tagline: "Modern Drupal for serious content platforms.",
+        id: "discovery",
+        title: "Product Discovery & Tech Planning",
+        tagline: "Every successful project starts with clear thinking and senior-level planning.",
         longDesc:
-            "We treat Drupal as an application framework, not just a CMS. From custom modules and distributions to decoupled builds, we make Drupal a stable foundation for complex content, permissions, and integrations.",
+            "Before writing code, we work with you to understand the problem, define system requirements, and choose the appropriate technology stack. This phase prevents costly rewrites and misaligned builds later in the project lifecycle.",
         outcomes: [
-            "Faster page loads and more stable editing experience.",
-            "Clean upgrade path from legacy Drupal (7/8) to Drupal 10+.",
-            "Tighter alignment between content modeling and business rules.",
-            "Reduced custom spaghetti by moving logic into well-structured modules.",
+            "Understand the problem being solved",
+            "Define system requirements and constraints",
+            "Design data models, APIs, and boundaries",
+            "Identify risks (performance, security, scale)",
         ],
         tech: [
-            "Drupal 9/10/11",
-            "Custom modules & distributions",
-            "Headless/decoupled architectures",
-            "Migrations (Migrate API)",
-            "Caching (Redis/Varnish/CDN)",
+            "Requirements Gathering",
+            "System Architecture",
+            "Tech Stack Selection",
+            "Risk Assessment",
         ],
     },
     {
-        id: "php-backends",
-        title: "Symfony & Laravel Backends",
-        tagline: "Business logic, not just boilerplate controllers.",
+        id: "architecture",
+        title: "Architecture & Technical Leadership",
+        tagline: "We provide strong technical leadership throughout the entire project.",
         longDesc:
-            "We build and maintain backends where data modeling, workflows, and performance matter. Think multi-tenant SaaS, admin consoles, and APIs that real products depend on every day.",
+            "Our role is not only to implement features, but to ensure the system remains healthy as it grows. We cover scalability, security, maintainability, and long-term evolution strategies.",
         outcomes: [
-            "Well-structured domain logic instead of controllers doing everything.",
-            "Clear separation between read/write paths and external integrations.",
-            "APIs that are pleasant for front-end teams to consume.",
-            "Background jobs that stay reliable under real-world load.",
+            "System and application architecture",
+            "Scalability and performance planning",
+            "Security and data protection strategies",
+            "Code standards and technical governance",
         ],
         tech: [
-            "Symfony & Laravel",
-            "REST & GraphQL APIs",
-            "Multi-tenant SaaS patterns",
-            "Queues & workers (Redis, SQS, etc.)",
-            "Auth, ACL, and audit trails",
+            "System Design",
+            "Scalability Planning",
+            "Security Strategy",
+            "Technical Governance",
         ],
     },
     {
-        id: "web-apps",
-        title: "Web Applications (React / Next.js)",
-        tagline: "Interfaces that feel fast, predictable, and trustworthy.",
+        id: "backend",
+        title: "Backend Engineering",
+        tagline: "We design and build robust backend systems that power real production workloads.",
         longDesc:
-            "We design and build web apps where UX, accessibility, and performance matter: dashboards, portals, internal tools, and customer-facing products built on React and Next.js.",
+            "All backend systems are designed with reliability, performance, and future growth in mind. We integrate authentication, business logic, workflows, and third-party services.",
         outcomes: [
-            "Interfaces that stay fast even as your data and users grow.",
-            "Design systems and components your team can reuse safely.",
-            "SSR/ISR strategies that keep SEO and performance aligned.",
-            "Reduced complexity in data fetching and state management.",
+            "API design and implementation",
+            "Authentication and authorization systems",
+            "Business logic and workflow engines",
+            "Data modeling and persistence layers",
         ],
         tech: [
-            "React & Next.js",
-            "Design systems / component libraries",
-            "SSR/ISR and routing",
-            "Form-heavy UX and dashboards",
-            "Integration with existing APIs",
+            "Symfony",
+            "Laravel",
+            "Python",
+            "Go",
+            "Modern Databases",
+        ],
+    },
+    {
+        id: "frontend",
+        title: "Frontend & Web Applications",
+        tagline: "We build modern web applications that are fast, maintainable, and easy to evolve.",
+        longDesc:
+            "The goal is not just visual quality, but long-term usability and maintainability. We focus on clean separation between frontend and backend, performance optimization, and accessibility.",
+        outcomes: [
+            "React and Next.js applications",
+            "Headless architectures with Drupal",
+            "Clean separation of frontend/backend",
+            "SEO-ready implementations",
+        ],
+        tech: [
+            "React",
+            "Next.js",
+            "Drupal (Headless)",
+            "Tailwind CSS",
+            "TypeScript",
         ],
     },
     {
         id: "mobile",
-        title: "Mobile Apps",
-        tagline: "Cross-platform apps glued to a solid backend.",
+        title: "Mobile Application Development",
+        tagline: "Mobile applications are treated as core products, not secondary deliverables.",
         longDesc:
-            "We ship mobile apps that share a backbone with your web or backend stack. One consistent source of truth, instrumented and observable, for iOS and Android users.",
+            "We build mobile applications that are designed to work as part of a complete system, with secure API integration and scalable backend connectivity.",
         outcomes: [
-            "Unified APIs across web and mobile clients.",
-            "Offline-first flows for unreliable networks.",
-            "Consistent analytics and event tracking across devices.",
-            "Smooth deployment pipelines from code to app stores.",
+            "iOS and Android applications",
+            "Secure API integration",
+            "Scalable backend connectivity",
+            "Production-ready deployment pipelines",
         ],
         tech: [
-            "React Native / cross-platform stacks",
-            "API design for mobile clients",
-            "Push notifications and messaging",
-            "Offline sync strategies",
-            "App store deployment pipelines",
-        ],
-    },
-    {
-        id: "python-go",
-        title: "Python & Go Services",
-        tagline: "Jobs, microservices, and data flows that actually hold up.",
-        longDesc:
-            "We add Python and Go where they fit best: data processing, workers, and high-throughput services. We care about observability, retries, and backpressure—not just ‘it works on my machine’.",
-        outcomes: [
-            "Background jobs with clear SLAs and failure modes.",
-            "Streaming and batch pipelines that are debuggable.",
-            "Services that scale predictably as traffic grows.",
-            "Less guesswork in performance thanks to metrics and profiling.",
-        ],
-        tech: [
-            "Python workers & scripts",
-            "Go microservices and APIs",
-            "Event-driven architectures",
-            "Streaming and batch pipelines",
-            "Instrumentation & tracing",
+            "iOS",
+            "Android",
+            "React Native",
+            "API Integration",
         ],
     },
     {
         id: "devops",
-        title: "DevOps, CI/CD & Observability",
-        tagline: "From ‘it runs on my laptop’ to repeatable, safe releases.",
+        title: "DevOps & Infrastructure",
+        tagline: "A project is finished when the system is running reliably in production.",
         longDesc:
-            "We help teams mature their delivery pipeline: reproducible environments, safe deploys, and visibility into what production is doing—without turning everything into a science project.",
+            "We take responsibility for cloud infrastructure, deployment automation, and monitoring. Clients receive a running, observable system that their team can operate with confidence.",
         outcomes: [
-            "One-click or one-command deploys instead of manual checklists.",
-            "Infrastructure that can be explained and evolved by your team.",
-            "Monitoring and alerts tied to business health, not just CPU.",
-            "Reduced downtime from safer rollouts and rollback strategies.",
+            "Cloud infrastructure setup",
+            "Deployment automation (CI/CD)",
+            "Environment configuration & secrets",
+            "Monitoring, logging, and alerting",
         ],
         tech: [
-            "CI/CD (GitHub Actions, GitLab CI, etc.)",
-            "Containers & orchestration",
-            "Infra-as-code",
-            "Metrics, logs, and tracing",
-            "Security hardening and access control",
+            "AWS / Cloud",
+            "CI/CD Pipelines",
+            "Docker / Containers",
+            "Monitoring (Datadog/NewRelic)",
+            "Security Hardening",
         ],
     },
 ];
 
-const projectSlices: Slice[] = [
+const typicalProjects: TypicalProject[] = [
     {
-        title: "Platform modernization",
-        desc: "Upgrade legacy Drupal/PHP systems, extract services into Symfony/Laravel/Python/Go, and improve deployments and observability without a risky ‘big bang’ rewrite.",
+        title: "SaaS Platforms",
+        desc: "Complete subscription-based platforms with multi-tenancy and billing.",
     },
     {
-        title: "New product or feature line",
-        desc: "Design and build a new product slice using Next.js, Python/Go services, and a Drupal or PHP-based admin backbone.",
+        title: "Custom Web Applications",
+        desc: "Tailored web solutions solving specific business problems.",
     },
     {
-        title: "Performance & reliability pass",
-        desc: "Target slow pages, noisy incidents, and fragile release pipelines, then fix them in a measured, test-backed way.",
-    },
-];
-
-const deliverables: Deliverable[] = [
-    {
-        title: "Architecture & implementation",
-        desc: "We don’t stop at diagrams. We write the code, tests, and infrastructure to make the architecture real.",
+        title: "Internal Business Tools",
+        desc: "Dashboards, admins, and workflow tools to streamline operations.",
     },
     {
-        title: "Playbooks & documentation",
-        desc: "Runbooks, handover docs, and decision records so your team can operate and extend what we built.",
+        title: "API-Driven Platforms",
+        desc: "Headless systems powering multiple frontend or mobile experiences.",
     },
     {
-        title: "Onboarding support",
-        desc: "We help internal engineers get comfortable with new systems via pairing sessions and guided tours.",
-    },
-    {
-        title: "Instrumentation & dashboards",
-        desc: "Metrics and logs wired into dashboards so you can see how your stack behaves under real traffic.",
+        title: "Mobile Applications",
+        desc: "Native or cross-platform mobile apps integrated with your stack.",
     },
 ];
 
 const fits: Fit[] = [
     {
-        title: "Digital teams with a growing backlog",
-        bullets: [
-            "You have more ideas than senior engineering time.",
-            "You need to ship meaningful slices without derailing your roadmap.",
-            "You want partners who can own outcomes, not just tickets.",
-        ],
+        title: "Founders",
+        desc: "Building a new software product from scratch.",
     },
     {
-        title: "Product companies with legacy platforms",
-        bullets: [
-            "Core revenue still runs on Drupal or PHP backends that feel fragile.",
-            "Releases are scary and incidents are too frequent.",
-            "You want evolution, not a risky ‘throw everything away’ rewrite.",
-        ],
+        title: "Companies",
+        desc: "Launching new platforms or rebuilding existing ones.",
     },
     {
-        title: "Startups with real traction",
-        bullets: [
-            "You already have users and revenue, and the stack is showing cracks.",
-            "You want help formalizing APIs, workers, and observability.",
-            "You care about long-term maintainability, not one-off hacks.",
-        ],
+        title: "CTOs",
+        desc: "Who need senior technical execution and ownership.",
+    },
+    {
+        title: "Teams",
+        desc: "Modernizing legacy systems and reducing technical debt.",
     },
 ];
 
-const industries: Industry[] = [
+const workPrinciples: WorkPrinciple[] = [
     {
-        name: "B2B SaaS & Platforms",
-        examples: [
-            "Customer dashboards on Next.js with PHP/Go APIs.",
-            "Multi-tenant admin consoles backed by Symfony or Laravel.",
-            "Billing and subscription workflows integrated with Stripe and CRM tools.",
-        ],
+        title: "Senior Engineers Only",
+        desc: "Senior engineers work directly on your product. No juniors hiding behind managers.",
     },
     {
-        name: "Content-heavy & media",
-        examples: [
-            "Publishing platforms on Drupal 10/11 with headless frontends.",
-            "Content pipelines that blend editorial work with automation.",
-            "High-traffic landing pages with strong SEO and performance budgets.",
-        ],
+        title: "Direct Communication",
+        desc: "Direct access to decision-makers and the engineers building your system.",
     },
     {
-        name: "Fintech & transactional systems",
-        examples: [
-            "Payment and payout flows with strong audit and observability.",
-            "Real-time notifications powered by Python/Go workers.",
-            "Fraud and risk signals surfaced to internal tools and dashboards.",
-        ],
+        title: "Outcome Ownership",
+        desc: "Clear ownership of outcomes and deliverables, not just hours billed.",
     },
     {
-        name: "Internal tools & ops",
-        examples: [
-            "Ops dashboards that unify data from multiple backends.",
-            "Case management tools replacing shared spreadsheets.",
-            "Workflow engines that glue together SaaS tools and custom logic.",
-        ],
-    },
-];
-
-const collabPillars: CollabPillar[] = [
-    {
-        title: "Clear communication",
-        desc: "Short written updates, honest trade-offs, and a bias toward clarity over jargon. We want product, design, and engineering to stay on the same page.",
+        title: "Collaborative Process",
+        desc: "A collaborative, transparent working process with regular updates.",
     },
     {
-        title: "Simple rituals",
-        desc: "We fit into your standups, planning, and reviews—or help you create lightweight ones if you don’t have them yet. No heavy processes unless they earn their keep.",
-    },
-    {
-        title: "Code you can own",
-        desc: "We write code, docs, and tests so your internal team can take over comfortably. Our goal is to make ourselves less necessary over time, not more.",
-    },
-    {
-        title: "Production-first mindset",
-        desc: "We instrument what we build, wire it into your monitoring stack, and define basic SLOs so you’re never flying blind once it hits real traffic.",
+        title: "Long-Term Thinking",
+        desc: "We make architectural decisions for the long haul, even under tight timelines.",
     },
 ];
 
@@ -290,44 +269,37 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-red-50/40 via-white to-neutral-100/40" />
                 <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
                     <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50/60 px-4 py-1.5">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-600" />
-            </span>
-                        <span
-                            className={`text-xs font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                        >
-              SERVICES • DENVER-BASED WEB & APP WORKSHOP
-            </span>
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-red-600" />
+                        </span>
+                        <span className={`text-xs font-bold uppercase tracking-[0.2em] ${brand.red}`}>
+                            SERVICES • BUILD SOFTWARE PRODUCTS
+                        </span>
                     </div>
 
                     <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1.3fr)] lg:items-center">
                         <div className="space-y-6">
                             <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-                                A focused set of services around serious{" "}
+                                Build Software Products From Scratch With{" "}
                                 <span className="relative inline-block">
-                  <span className="relative z-10">Drupal, PHP, JS, Python,</span>
-                  <span className="absolute bottom-1 left-0 h-3 w-full bg-gradient-to-r from-red-600/20 to-red-600/40" />
-                </span>{" "}
-                                and Go products.
+                                    <span className="relative z-10">Senior Engineers</span>
+                                    <span className="absolute bottom-1 left-0 h-3 w-full bg-gradient-to-r from-red-600/20 to-red-600/40" />
+                                </span>
                             </h1>
                             <p className={`max-w-2xl text-lg leading-relaxed ${brand.gray}`}>
-                                ColibriCode is a senior-heavy engineering workshop based in Denver,
-                                USA. We help teams build and maintain platforms where performance,
-                                reliability, and long-term ownership matter more than quick demos.
+                                ColibriCode is a Denver-based product engineering workshop that designs, builds, launches, and maintains production-ready web and mobile applications from scratch.
                             </p>
                             <p className="text-sm text-neutral-500">
-                                Most of our work happens inside a stack your team already knows:
-                                Drupal, Symfony, Laravel, React/Next.js, Python, Go, and the DevOps
-                                that keeps everything running in production.
+                                We partner with founders, startups, and growing companies that need a senior technical team capable of owning the full execution of a product.
                             </p>
 
                             <div className="flex flex-wrap gap-3">
                                 <a
-                                    href="#services-grid"
+                                    href="/contact"
                                     className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-red-600/30"
                                 >
-                                    Explore service areas
+                                    Start a Project
                                     <svg
                                         className="h-4 w-4"
                                         fill="none"
@@ -343,10 +315,10 @@ export default function ServicesPage() {
                                     </svg>
                                 </a>
                                 <a
-                                    href="/engagement"
+                                    href="/consultation" // Assuming endpoint or anchor
                                     className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-7 py-3 text-sm font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:shadow-md hover:-translate-y-0.5"
                                 >
-                                    See engagement models
+                                    Request Technical Consultation
                                 </a>
                             </div>
                         </div>
@@ -355,25 +327,27 @@ export default function ServicesPage() {
                             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-red-600/10 to-red-600/5 blur-2xl" />
                             <div className="relative space-y-4 rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm text-sm">
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                                    WHAT WE TEND TO OWN
+                                    WHAT WE DO
                                 </p>
-                                <ul className="space-y-2 text-neutral-800">
+                                <p className="text-neutral-800 font-medium">
+                                    ColibriCode builds complete software systems. We are not a staff-augmentation provider and we are not a body shop.
+                                </p>
+                                <ul className="space-y-2 text-neutral-600">
                                     <li>
-                                        <span className="font-semibold">Platforms:</span> Drupal, PHP
-                                        backends, Next.js frontends, Python/Go workers.
+                                        <span className="text-red-600 mr-2">•</span>
+                                        End-to-end product development
                                     </li>
                                     <li>
-                                        <span className="font-semibold">Critical paths:</span> auth,
-                                        onboarding, payments, content pipelines, internal tooling.
+                                        <span className="text-red-600 mr-2">•</span>
+                                        Technical decisions aligned with business goals
                                     </li>
                                     <li>
-                                        <span className="font-semibold">Operational glue:</span> CI/CD,
-                                        observability, runbooks, and incident reduction.
+                                        <span className="text-red-600 mr-2">•</span>
+                                        Real production systems, not just prototypes
                                     </li>
                                 </ul>
-                                <p className="text-xs text-neutral-500">
-                                    We&#39;re not trying to do everything. We go deep on a small set of
-                                    technologies and say “no” when something is outside our lane.
+                                <p className="text-xs text-neutral-500 pt-2 border-t border-neutral-100">
+                                    You bring the idea or technical challenge. We take responsibility for turning it into a working, scalable product.
                                 </p>
                             </div>
                         </div>
@@ -381,22 +355,47 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Services grid */}
-            <section id="services-grid" className="py-20 bg-white">
+            {/* Product Development Intro Section */}
+             <section className="py-16 bg-white border-b border-neutral-100">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+                     <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>
+                        FROM SCRATCH
+                    </p>
+                    <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl text-neutral-900">
+                        Product Development From Scratch
+                    </h2>
+                    <p className={`mx-auto mt-4 max-w-3xl text-lg ${brand.gray}`}>
+                        We specialize in building new software products from the ground up. This includes projects at idea stage as well as companies that need to replace or rebuild existing systems.
+                    </p>
+                     <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-left max-w-5xl mx-auto">
+                        {[
+                            "Translate business goals into a clear roadmap",
+                            "Design architectures that scale with real usage",
+                            "Launch faster without sacrificing stability",
+                            "Reduce technical debt with correct decisions"
+                        ].map((item, i) => (
+                             <div key={i} className="flex gap-3 items-start p-4 rounded-2xl bg-neutral-50 border border-neutral-100">
+                                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-red-500" />
+                                 <span className="text-sm font-medium text-neutral-800">{item}</span>
+                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Services Grid */}
+            <section id="services-grid" className="py-20 bg-neutral-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mb-12 text-center">
-                        <p
-                            className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                        >
-                            SERVICE AREAS
+                        <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>
+                            OUR EXPERTISE
                         </p>
                         <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                            The places we add the most leverage.
+                            From initial concept to production launch.
                         </h2>
                         <p className={`mx-auto mt-4 max-w-2xl text-base ${brand.gray}`}>
-                            Whether you bring us a single problematic subsystem or an entire
-                            platform, we tend to work inside these six areas, often combining
-                            several of them into one engagement.
+                            We own the technical execution across the entire lifecycle, ensuring your product is built right from day one.
                         </p>
                     </div>
 
@@ -404,7 +403,7 @@ export default function ServicesPage() {
                         {serviceAreas.map((s, idx) => (
                             <article
                                 key={s.id}
-                                className="group relative flex flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-red-200 hover:shadow-xl"
+                                className="group relative flex flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-red-200 hover:shadow-xl"
                             >
                                 <div className="absolute right-0 top-0 h-28 w-28 bg-gradient-to-br from-red-600/10 to-transparent blur-2xl" />
                                 <div className="relative mb-4 flex items-center justify-between gap-4">
@@ -416,9 +415,6 @@ export default function ServicesPage() {
                                             {s.title}
                                         </h3>
                                     </div>
-                                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-700 text-xs font-bold text-white shadow-md shadow-red-600/30">
-                    {["CMS", "PHP", "WEB", "APP", "DATA", "OPS"][idx]}
-                  </span>
                                 </div>
 
                                 <p className={`relative text-sm font-medium ${brand.gray}`}>
@@ -431,10 +427,10 @@ export default function ServicesPage() {
 
                                 <div className="relative mt-4 space-y-1.5 text-xs text-neutral-800">
                                     <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                                        TYPICAL OUTCOMES
+                                        INCLUDES
                                     </p>
                                     <ul className="space-y-1.5">
-                                        {s.outcomes.slice(0, 3).map((o) => (
+                                        {s.outcomes.map((o) => (
                                             <li key={o} className="flex gap-2">
                                                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
                                                 <span>{o}</span>
@@ -443,273 +439,150 @@ export default function ServicesPage() {
                                     </ul>
                                 </div>
 
-                                <div className="relative mt-4 space-y-1.5 text-xs text-neutral-700">
-                                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                                        TYPICAL TOOLBOX
-                                    </p>
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {s.tech.map((t) => (
-                                            <span
-                                                key={t}
-                                                className="rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-[11px] font-medium text-neutral-700"
-                                            >
-                        {t}
-                      </span>
-                                        ))}
+                                {s.tech && s.tech.length > 0 && (
+                                    <div className="relative mt-5 pt-4 border-t border-neutral-100">
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {s.tech.map((t) => (
+                                                <span
+                                                    key={t}
+                                                    className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-medium text-neutral-600"
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </article>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Who we're a good fit for */}
-            <section className="py-20 bg-neutral-50 border-y border-neutral-200">
+             {/* Typical Projects */}
+            <section className="py-20 bg-white border-y border-neutral-200">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mb-10 text-center">
-                        <p
-                            className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                        >
-                            FIT & FOCUS
+                        <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>
+                             TYPICAL PROJECTS
                         </p>
                         <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                            Who we’re usually a strong fit for.
+                            What we build.
                         </h2>
-                        <p className={`mx-auto mt-4 max-w-2xl text-base ${brand.gray}`}>
-                            We work best with teams that already feel the weight of their product:
-                            users, revenue, incidents, and a roadmap that can’t slow down. If this
-                            sounds like you, we’ll probably get along.
+                    </div>
+
+                    <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+                        {typicalProjects.map((p) => (
+                             <article
+                                key={p.title}
+                                className="relative flex flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-5 shadow-sm text-center hover:bg-white hover:shadow-md transition-all"
+                            >
+                                <h3 className="text-sm font-bold text-neutral-900">{p.title}</h3>
+                                {p.desc && <p className="mt-2 text-xs text-neutral-600">{p.desc}</p>}
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+             {/* How We Work */}
+            <section className="py-20 bg-neutral-900 text-white">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                     <div className="mb-10 text-center">
+                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-500">
+                            HOW WE WORK
+                        </p>
+                        <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
+                            A product engineering workshop.
+                        </h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-300">
+                           We can work independently or alongside your internal team, depending on what best serves the project.
                         </p>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-center">
+                        {workPrinciples.map((wp, idx) => (
+                            <article
+                                key={wp.title}
+                                className={`relative rounded-3xl border border-neutral-800 bg-neutral-950 p-7 shadow-sm ${workPrinciples.length === idx + 1 && workPrinciples.length % 3 !== 0 ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                            >
+                                <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/20 to-transparent blur-2xl" />
+                                <h3 className="relative text-lg font-bold text-white">{wp.title}</h3>
+                                <p className="relative mt-3 text-sm text-neutral-300 leading-relaxed">{wp.desc}</p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+             {/* Who We Work With */}
+            <section className="py-20 bg-white">
+                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="mb-10 text-center">
+                        <p className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}>
+                            WHO WE WORK WITH
+                        </p>
+                        <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
+                            We are a strong fit for...
+                        </h2>
+                    </div>
+
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {fits.map((f) => (
                             <article
                                 key={f.title}
-                                className="relative rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm"
+                                className="relative rounded-3xl border border-neutral-200 bg-neutral-50 p-7 shadow-sm"
                             >
                                 <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/10 to-transparent blur-2xl" />
-                                <h3 className="relative text-sm font-bold text-neutral-900">
+                                <h3 className="relative text-lg font-bold text-neutral-900">
                                     {f.title}
                                 </h3>
-                                <ul className="relative mt-3 space-y-2 text-sm text-neutral-700">
-                                    {f.bullets.map((b) => (
-                                        <li key={b} className="flex gap-2">
-                                            <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
-                                            <span>{b}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Project slices */}
-            <section className="py-20 bg-neutral-900 text-white">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mb-10 text-center">
-                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-500">
-                            HOW WE SLICE WORK
-                        </p>
-                        <h2 className="mt-4 text-3px font-bold tracking-tight lg:text-4xl">
-                            We prefer thin, high-impact slices over vague “ongoing help”.
-                        </h2>
-                        <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-300">
-                            Instead of a giant, fuzzy scope, we cut the work into clear slices that
-                            ship value on their own. Each slice can live in Drupal, PHP, JS,
-                            Python/Go, or the DevOps layer—and usually touches more than one.
-                        </p>
-                    </div>
-
-                    <div className="grid gap-6 md:grid-cols-3">
-                        {projectSlices.map((p) => (
-                            <article
-                                key={p.title}
-                                className="relative flex flex-col rounded-3xl border border-neutral-800 bg-neutral-950 p-7 shadow-sm"
-                            >
-                                <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/20 to-transparent blur-2xl" />
-                                <h3 className="relative text-sm font-bold text-white">
-                                    {p.title}
-                                </h3>
-                                <p className="relative mt-3 text-sm text-neutral-300">{p.desc}</p>
-                                <p className="relative mt-4 text-[11px] text-neutral-500">
-                                    We design slices to be reversible, observable, and easy to hand over
-                                    to your internal team once the path is proven.
+                                <p className="relative mt-2 text-sm text-neutral-600">
+                                    {f.desc}
                                 </p>
                             </article>
                         ))}
                     </div>
-                </div>
-            </section>
 
-            {/* Industries & use cases */}
-            <section className="py-20 bg-white">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mb-10 text-center">
-                        <p
-                            className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                        >
-                            INDUSTRIES & USE CASES
-                        </p>
-                        <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                            Where our stack tends to shine.
-                        </h2>
-                    </div>
-
-                    <div className="grid gap-6 md:grid-cols-2">
-                        {industries.map((ind) => (
-                            <article
-                                key={ind.name}
-                                className="relative rounded-3xl border border-neutral-200 bg-neutral-50 p-7 shadow-sm"
-                            >
-                                <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/10 to-transparent blur-2xl" />
-                                <h3 className="relative text-sm font-bold text-neutral-900">
-                                    {ind.name}
-                                </h3>
-                                <ul className="relative mt-3 space-y-2 text-sm text-neutral-700">
-                                    {ind.examples.map((ex) => (
-                                        <li key={ex} className="flex gap-2">
-                                            <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
-                                            <span>{ex}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        ))}
-                    </div>
-
-                    <p className="mt-8 text-center text-xs text-neutral-500">
-                        If your industry isn’t listed here but your stack looks familiar—Drupal,
-                        PHP, React/Next.js, Python, Go, and a modern cloud—there’s a good chance
-                        we can help.
-                    </p>
-                </div>
-            </section>
-
-            {/* Deliverables */}
-            <section className="py-20 bg-neutral-50 border-y border-neutral-200">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mb-10 text-center">
-                        <p
-                            className={`text-sm font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                        >
-                            WHAT YOU GET
-                        </p>
-                        <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                            Concrete deliverables, not just “consulting hours”.
-                        </h2>
-                    </div>
-
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {deliverables.map((d) => (
-                            <article
-                                key={d.title}
-                                className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm"
-                            >
-                                <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/10 to-transparent blur-2xl" />
-                                <h3 className="relative text-sm font-bold text-neutral-900">
-                                    {d.title}
-                                </h3>
-                                <p className={`relative mt-2 text-sm ${brand.gray}`}>{d.desc}</p>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* How we collaborate */}
-            <section className="py-20 bg-neutral-900 text-white">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mb-10 text-center">
-                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-500">
-                            HOW WE COLLABORATE
-                        </p>
-                        <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-                            What it’s like to work with ColibriCode.
-                        </h2>
-                        <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-300">
-                            We slot into your team as an embedded workshop: a small group of senior
-                            engineers focused on outcomes, communication, and leaving your stack in
-                            better shape than we found it.
+                    <div className="mt-12 mx-auto max-w-3xl text-center p-6 rounded-2xl bg-red-50 border border-red-100">
+                         <p className="text-sm font-medium text-red-900">
+                            We are <span className="font-bold">not</span> a fit for teams looking for low-cost outsourcing, short-term staffing, or one-off development tasks.
                         </p>
                     </div>
-
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {collabPillars.map((p) => (
-                            <article
-                                key={p.title}
-                                className="relative rounded-3xl border border-neutral-800 bg-neutral-950 p-7 shadow-sm"
-                            >
-                                <div className="absolute right-0 top-0 h-24 w-24 bg-gradient-to-br from-red-600/20 to-transparent blur-2xl" />
-                                <h3 className="relative text-sm font-bold text-white">{p.title}</h3>
-                                <p className="relative mt-2 text-sm text-neutral-300">{p.desc}</p>
-                            </article>
-                        ))}
-                    </div>
-
-                    <p className="mt-8 text-center text-xs text-neutral-500">
-                        We’re happy to work in your tools—Jira, Linear, GitHub, GitLab—as long as
-                        there’s a single source of truth and someone responsible for priorities.
-                    </p>
                 </div>
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-neutral-50 border-t border-neutral-200">
                 <div className="mx-auto max-w-5xl px-6 lg:px-8">
                     <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-gradient-to-br from-white via-red-50/30 to-neutral-50 p-10 shadow-xl lg:p-14">
                         <div className="absolute right-0 top-0 h-64 w-64 bg-gradient-to-br from-red-600/20 to-transparent blur-3xl" />
-                        <div className="relative space-y-5">
-                            <p
-                                className={`text-xs font-bold uppercase tracking-[0.2em] ${brand.red}`}
-                            >
-                                TALK ABOUT SERVICES
-                            </p>
-                            <h2 className="text-2xl font-bold tracking-tight lg:text-3xl">
-                                Unsure which service area matches your current pain? That’s normal.
+                        <div className="relative space-y-5 text-center">
+                            <h2 className="text-3xl font-bold tracking-tight lg:text-4xl text-neutral-900">
+                                Ready to start your project?
                             </h2>
-                            <p className={`max-w-2xl text-sm leading-relaxed ${brand.gray}`}>
-                                Send us a brief description of where things hurt today—slow Drupal
-                                pages, shaky releases, missing observability, a React app that’s grown
-                                wild, or Python/Go workers failing silently. We&#39;ll map that pain
-                                to a concrete service area and a small starting slice.
+                            <p className={`mx-auto max-w-2xl text-base leading-relaxed ${brand.gray}`}>
+                                If you are planning a new product, rebuilding an existing system, or need a senior team to take ownership of technical execution, we can help.
                             </p>
-                            <div className="flex flex-wrap gap-3">
-                                <a
-                                    href="mailto:hello@colibricode.com?subject=Services%20with%20ColibriCode"
-                                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-red-600/30"
-                                >
-                                    Email hello@colibricode.com
-                                    <svg
-                                        className="h-4 w-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                        />
-                                    </svg>
-                                </a>
+                            <div className="flex flex-wrap gap-4 justify-center pt-4">
                                 <a
                                     href="/contact"
-                                    className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-7 py-3 text-sm font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:shadow-md hover:-translate-y-0.5"
+                                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-red-600/25 transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-red-600/30"
                                 >
-                                    Or use the contact page
+                                    Start a Project
+                                </a>
+                                <a
+                                    href="/consultation"
+                                    className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-8 py-4 text-base font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:shadow-md hover:-translate-y-0.5"
+                                >
+                                    Request a Technical Consultation
                                 </a>
                             </div>
-                            <p className="text-[11px] text-neutral-500">
-                                We’re based in Denver and work mostly with teams in North America and
-                                Europe, with overlapping hours and English-first communication.
-                            </p>
                         </div>
                     </div>
+                     <p className="mt-12 text-center text-sm font-medium text-neutral-400 max-w-xl mx-auto">
+                        ColibriCode builds software products from scratch, with senior engineers, production-first architecture, and long-term scalability in mind.
+                    </p>
                 </div>
             </section>
         </main>
