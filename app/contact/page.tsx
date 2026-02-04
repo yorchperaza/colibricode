@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 const brand = {
   red: "text-red-600",
@@ -18,6 +19,7 @@ type FormState = {
 };
 
 export default function ContactPage() {
+  const router = useRouter();
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -68,16 +70,7 @@ export default function ContactPage() {
         );
         setSubmitted(false);
       } else {
-        setSubmitted(true);
-        setForm({
-          name: "",
-          email: "",
-          company: "",
-          projectType: "",
-          budget: "",
-          timeline: "",
-          message: "",
-        });
+        router.push("/contact/success");
       }
     } catch (err) {
       console.error("Contact form error:", err);
@@ -451,12 +444,6 @@ export default function ContactPage() {
               </div>
 
               {error && <p className="text-xs font-medium text-red-600">{error}</p>}
-
-              {submitted && !error && (
-                <p className="text-xs font-medium text-green-700">
-                  Thanks for the brief. We&apos;ll review it and reply with next steps.
-                </p>
-              )}
             </form>
           </div>
         </div>
