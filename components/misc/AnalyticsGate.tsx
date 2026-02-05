@@ -7,9 +7,11 @@ import { hasConsent } from "@/lib/consent"
 type Props = {
     // e.g. "G-XXXXXXXXXX" if using GA4
     gaMeasurementId?: string
+    // e.g. "AW-XXXXXXXXXX" if using Google Ads
+    googleAdsId?: string
 }
 
-export default function AnalyticsGate({ gaMeasurementId }: Props) {
+export default function AnalyticsGate({ gaMeasurementId, googleAdsId }: Props) {
     const [ok, setOk] = useState(false)
 
     useEffect(() => {
@@ -20,13 +22,15 @@ export default function AnalyticsGate({ gaMeasurementId }: Props) {
         return () => clearInterval(t)
     }, [])
 
-    if (!ok || !gaMeasurementId) return null
+    if (!ok || (!gaMeasurementId && !googleAdsId)) return null
+
+    // We can use the same script for both, just loading one ID is enough to bootstrap gtag
+    const mainId = gaMeasurementId || googleAdsId
 
     return (
         <>
-            {/* GA4 example */}
             <Script
-                src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${mainId}`}
                 strategy="afterInteractive"
             />
             <Script id="ga-init" strategy="afterInteractive">
@@ -34,7 +38,9 @@ export default function AnalyticsGate({ gaMeasurementId }: Props) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${gaMeasurementId}');
+        
+        ${gaMeasurementId ? `gtag('config', '${gaMeasurementId}');` : ""}
+        ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ""}
       `}
             </Script>
         </>

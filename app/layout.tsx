@@ -122,7 +122,10 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <CookiesBanner />
-        <AnalyticsGate gaMeasurementId={process.env.NEXT_PUBLIC_GA_ID} />
+        <AnalyticsGate 
+            gaMeasurementId={process.env.NEXT_PUBLIC_GA_ID} 
+            googleAdsId="AW-17909098681" 
+        />
         </body>
         </html>
     );
