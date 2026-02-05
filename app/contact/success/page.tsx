@@ -1,11 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ContactSuccessPage() {
-  // TODO: Add Google Ads conversion tracking script here
-  // e.g., using a useEffect hook or a Script component from next/script
-  
+  useEffect(() => {
+    // Fire Google Ads conversion event
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "ads_conversion_Contact_Us_1", {
+        // <event_parameters>
+      });
+    }
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-neutral-50 text-neutral-900 flex items-center justify-center">
+    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-neutral-50 via-white to-neutral-50 text-neutral-900">
       <div className="mx-auto max-w-lg px-6 py-20 text-center lg:px-8">
         <div className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
           <svg
@@ -22,19 +31,21 @@ export default function ContactSuccessPage() {
             />
           </svg>
         </div>
-        
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 mb-4">
+
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
           Message Received!
         </h1>
-        
-        <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-          Thanks for reaching out. We've received your project brief and will review it shortly. You satisfy expect to hear from us within 1-2 business days.
+
+        <p className="mb-8 text-lg leading-relaxed text-neutral-600">
+          Thanks for reaching out. We&apos;ve received your project brief and will
+          review it shortly. You can expect to hear from us within 1-2 business
+          days.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-neutral-900/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:bg-neutral-800"
+            className="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-neutral-900/20 transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-xl"
           >
             Return Home
           </Link>
